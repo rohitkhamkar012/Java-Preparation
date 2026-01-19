@@ -1,0 +1,150 @@
+Q1. Accept a number from user - if it is divisible by 3 print “fun” , if it is divisible 
+	by 7 print “buzz” 
+	and if it is divisible by both(3,7) print “fun -buzz” . [ Two answer]
+
+ans-->
+
+import java.util.Scanner;
+
+public class Problem1 {
+	static void check(int a)
+	{
+		if(a%3==0)
+			System.out.print("fun ");
+		if(a%7==0)
+			System.out.println("buzz");
+	}
+	// static void check2(int a)
+	// {
+    //     if(a%3==0&&a%7==0)
+    //         System.out.println("fun buzz");
+	// 	else if(a%3==0)
+	// 		System.out.print("fun ");
+	// 	else if(a%7==0)
+	// 		System.out.println("buzz");
+	// }
+	public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		System.out.println("enter number:");
+		int a=scanner.nextInt();
+		check(a);
+
+	}
+
+}
+
+
+
+Q2. Accept a start number from user and end number from user. Print all  odd 
+number between start and end number. [ Two Answer]
+
+ans-->
+
+import java.util.Scanner;
+
+public class Problem2 {
+    public static void odd(int start ,int end)
+    {
+        boolean s=isodd(start);
+        if(s==false)
+        {
+            start=start+1;
+        }
+        for(int i=start;i<=end;i=i+2)
+        {
+            System.out.println(i);
+        }
+    }
+
+   public static boolean isodd(int a)
+    {
+        return a%2!=0;
+    }
+    // public static void odd2(int start, int end )
+    // {
+    //     for(int i=start;i<=end;i++)
+    //     {
+    //         if(i%2!=0)
+    //         {
+    //             System.out.println(i);
+    //         }
+    //     }
+    // }
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter start and end");
+        int start=sc.nextInt();
+        int end=sc.nextInt();
+        odd(start, end);
+    }
+}
+
+
+
+Q3. Accept a number from user and check if it is palindrome number or not eg 
+(121) 
+ans-->
+
+import java.util.Scanner;
+
+public class Problem3 {
+    static boolean checkPalin(int a)
+    {
+        int rev=0;
+        int og=a;
+        while(a!=0)
+        {
+            int rem=a%10;
+            rev=rev*10+rem;
+            a=a/10;
+        }
+        return rev==og;
+    }
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("enter number");
+        int a=scanner.nextInt();
+        System.out.println(checkPalin(a));
+    }
+}
+
+
+
+Q4. Accept a term  from user and print Fibonacci series. 
+ans-->
+
+import java.util.Scanner;
+
+public class Problem4 {
+    static void fibbo(int n)
+    {
+        int a,b,c;
+        a=0;
+        b=1;
+        System.out.println(a);
+        System.out.println(b);
+        if(n>2)
+        {
+            for(int i=1;i<=n-2;i++)
+            {
+                c=a+b;
+                System.out.println(c);
+                a=b;
+                b=c;
+            }
+        }
+
+    }
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("enter number");
+        int n=scanner.nextInt();
+        if(n==0)
+            System.out.println(0);
+        // else if(n==1)
+        //     System.out.println(1);
+        else
+            fibbo(n);
+    }
+}
