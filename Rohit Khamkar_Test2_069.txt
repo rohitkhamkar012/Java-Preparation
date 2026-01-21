@@ -1,0 +1,133 @@
+ 
+Q.1) Find factorial of a number using Recursive function
+
+>>
+public class Factorial_Recursive {
+    static int fact(int n)
+    {
+        if(n==0||n==1)
+        {
+            return 1;
+        }
+        else{
+
+            return n*fact(n-1);
+        }
+    }
+    public static void main(String[] args) {
+        System.out.println("factorial is :"+fact(5));
+    }
+}
+
+
+
+
+
+Q.2) Find Fibonacci series in following pattern 
+ 
+ 1 
+ 2 3 
+ 5 8 13 
+
+
+public class Fibonnaci_pattern {
+    static void fibbo(int n)
+    {
+        int a=0;
+        int b=1;
+        int c;
+        for (int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                c=a+b;
+                System.out.print(c+" ");
+                a=b;
+                b=c;
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        fibbo(3);
+    }
+}
+
+
+
+
+
+Q.3) Solve following pattern 
+>>
+  3 
+ 323 
+32123 
+ 323 
+   3 
+*** 
+** 
+* 
+
+>>public class pattern {
+    static void pattern1(){
+       
+        for(int i=3;i>=1;i--)
+        {
+            
+            for(int s=1;s<i;s++)
+            {
+                System.out.print(" ");
+            }
+            for(int j=3;j>=i;j--)
+            {
+                System.out.print(j);
+            }
+            // for(int r=i+1;r>i;r--)
+            // {
+            //     System.out.print(r);
+            // }
+            System.out.println();
+        }
+    }
+    static void pattern2(){
+        for(int i=1;i<=3;i++)
+        {
+            for(int j=3;j>=i;j--)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+    public static void main(String[] args) {
+        pattern1();
+        System.out.println();
+        pattern2();
+    }
+}
+
+
+
+Q.4) Print  binary of a number in reverse order  eg. Input 4 O/P 0 0 1 
+>>
+public class binary_reverse {
+    static void binary_rev(int n)
+    {
+        if(n!=0)
+        {
+            while(n!=0)
+            {
+                int rem=n%2;
+                System.out.print(rem);
+                n=n/2;
+            }
+        }
+        else{
+            System.out.print(0);
+        }
+    }
+    public static void main(String[] args) {
+        
+        binary_rev(4);
+    }
+}
